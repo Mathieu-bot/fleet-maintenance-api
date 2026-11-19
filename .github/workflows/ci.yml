@@ -32,5 +32,10 @@ jobs:
       - name: Build
         run: dotnet build --no-restore --configuration Release
 
+      - name: Check migrations are up to date
+        run: |
+          dotnet tool restore
+          dotnet ef migrations has-pending-model-changes --project src/FleetMaintenance.Infrastructure --configuration Release --no-build
+
       - name: Test
         run: dotnet test --no-build --configuration Release
