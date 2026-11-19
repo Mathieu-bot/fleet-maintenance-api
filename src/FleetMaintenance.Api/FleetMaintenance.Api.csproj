@@ -1,3 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
+  <ItemGroup>
+    <ProjectReference Include="..\FleetMaintenance.Infrastructure\FleetMaintenance.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

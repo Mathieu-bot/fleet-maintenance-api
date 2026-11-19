@@ -1,6 +1,12 @@
+using FleetMaintenance.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
+var connectionString = builder.Configuration.GetConnectionString("Default")
+    ?? throw new InvalidOperationException("Connection string 'Default' is not configured.");
+
 builder.Services.AddControllers();
+builder.Services.AddInfrastructure(connectionString);
 
 var app = builder.Build();
 
