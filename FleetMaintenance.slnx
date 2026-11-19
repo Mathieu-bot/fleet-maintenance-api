@@ -2,6 +2,7 @@
   <Folder Name="/src/">
     <Project Path="src/FleetMaintenance.Api/FleetMaintenance.Api.csproj" />
     <Project Path="src/FleetMaintenance.Domain/FleetMaintenance.Domain.csproj" />
+    <Project Path="src/FleetMaintenance.Infrastructure/FleetMaintenance.Infrastructure.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/FleetMaintenance.IntegrationTests/FleetMaintenance.IntegrationTests.csproj" />
