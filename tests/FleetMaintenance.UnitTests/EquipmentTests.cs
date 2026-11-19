@@ -24,7 +24,7 @@ public class EquipmentTests
     [InlineData("   ")]
     public void Create_RejectsBlankName(string name)
     {
-        Assert.Throws<ArgumentException>("name", () => Equipment.Create(name, "SN-001", "Heavy machinery", Now));
+        Assert.Throws<ArgumentException>(nameof(name), () => Equipment.Create(name, "SN-001", "Heavy machinery", Now));
     }
 
     [Theory]
@@ -32,7 +32,7 @@ public class EquipmentTests
     [InlineData("   ")]
     public void Create_RejectsBlankSerialNumber(string serialNumber)
     {
-        Assert.Throws<ArgumentException>("serialNumber", () => Equipment.Create("Excavator", serialNumber, "Heavy machinery", Now));
+        Assert.Throws<ArgumentException>(nameof(serialNumber), () => Equipment.Create("Excavator", serialNumber, "Heavy machinery", Now));
     }
 
     [Theory]
@@ -40,7 +40,7 @@ public class EquipmentTests
     [InlineData("   ")]
     public void Create_RejectsBlankCategory(string category)
     {
-        Assert.Throws<ArgumentException>("category", () => Equipment.Create("Excavator", "SN-001", category, Now));
+        Assert.Throws<ArgumentException>(nameof(category), () => Equipment.Create("Excavator", "SN-001", category, Now));
     }
 
     [Fact]
