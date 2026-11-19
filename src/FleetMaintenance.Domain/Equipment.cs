@@ -31,22 +31,9 @@ public sealed class Equipment
     public static Equipment Create(string name, string serialNumber, string category, DateTimeOffset createdAt)
     {
         return new Equipment(
-            Normalize(name, nameof(name), NameMaxLength),
-            Normalize(serialNumber, nameof(serialNumber), SerialNumberMaxLength),
-            Normalize(category, nameof(category), CategoryMaxLength),
+            Guard.RequiredText(name, nameof(name), NameMaxLength),
+            Guard.RequiredText(serialNumber, nameof(serialNumber), SerialNumberMaxLength),
+            Guard.RequiredText(category, nameof(category), CategoryMaxLength),
             createdAt);
-    }
-
-    private static string Normalize(string value, string paramName, int maxLength)
-    {
-        ArgumentException.ThrowIfNullOrWhiteSpace(value, paramName);
-
-        var trimmed = value.Trim();
-        if (trimmed.Length > maxLength)
-        {
-            throw new ArgumentException($"Must be at most {maxLength} characters.", paramName);
-        }
-
-        return trimmed;
     }
 }
