@@ -1,4 +1,4 @@
-namespace FleetMaintenance.Domain;
+namespace FleetMaintenance.Domain.Common;
 
 internal static class Guard
 {

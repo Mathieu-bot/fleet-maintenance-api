@@ -1,4 +1,6 @@
-namespace FleetMaintenance.Domain;
+using FleetMaintenance.Domain.Common;
+
+namespace FleetMaintenance.Domain.Entities;
 
 public sealed class Equipment
 {

@@ -1,4 +1,4 @@
-using FleetMaintenance.Domain;
+using FleetMaintenance.Domain.Entities;
 
 namespace FleetMaintenance.UnitTests;
 
