@@ -2,4 +2,7 @@
   <Folder Name="/src/">
     <Project Path="src/FleetMaintenance.Domain/FleetMaintenance.Domain.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/FleetMaintenance.UnitTests/FleetMaintenance.UnitTests.csproj" />
+  </Folder>
 </Solution>
