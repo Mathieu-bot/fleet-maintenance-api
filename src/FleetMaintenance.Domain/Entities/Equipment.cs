@@ -1,4 +1,5 @@
-using FleetMaintenance.Domain.Common;
+using FleetMaintenance.Domain.Enums;
+using FleetMaintenance.Domain.Validation;
 
 namespace FleetMaintenance.Domain.Entities;
 

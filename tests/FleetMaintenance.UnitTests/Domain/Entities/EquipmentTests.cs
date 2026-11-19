@@ -1,6 +1,7 @@
 using FleetMaintenance.Domain.Entities;
+using FleetMaintenance.Domain.Enums;
 
-namespace FleetMaintenance.UnitTests;
+namespace FleetMaintenance.UnitTests.Domain.Entities;
 
 public class EquipmentTests
 {

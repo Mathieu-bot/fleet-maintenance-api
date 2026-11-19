@@ -1,4 +1,4 @@
-namespace FleetMaintenance.Domain.Entities;
+namespace FleetMaintenance.Domain.Enums;
 
 public enum EquipmentStatus
 {
