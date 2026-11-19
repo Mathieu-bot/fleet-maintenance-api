@@ -24,7 +24,7 @@ public sealed class Equipment
 
     public string Category { get; }
 
-    public EquipmentStatus Status { get; private set; }
+    public EquipmentStatus Status { get; }
 
     public DateTimeOffset CreatedAt { get; }
 
