@@ -1,12 +1,10 @@
 using System.Net;
 using System.Net.Http.Json;
 using FleetMaintenance.Api.Models;
-using Microsoft.AspNetCore.Mvc.Testing;
 
 namespace FleetMaintenance.IntegrationTests.Api.Controllers;
 
-public sealed class HealthControllerTests(WebApplicationFactory<Program> factory)
-    : IClassFixture<WebApplicationFactory<Program>>
+public sealed class HealthControllerTests(ApiFactory factory) : IClassFixture<ApiFactory>
 {
     [Fact]
     public async Task Get_ReturnsHealthyStatus()
