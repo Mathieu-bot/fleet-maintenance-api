@@ -50,4 +50,34 @@ public class EquipmentTests
 
         Assert.Throws<ArgumentException>("name", () => Equipment.Create(tooLong, "SN-001", "Heavy machinery", Now));
     }
+
+    [Fact]
+    public void Create_RejectsSerialNumberLongerThanMaximum()
+    {
+        var tooLong = new string('a', Equipment.SerialNumberMaxLength + 1);
+
+        Assert.Throws<ArgumentException>("serialNumber", () => Equipment.Create("Excavator", tooLong, "Heavy machinery", Now));
+    }
+
+    [Fact]
+    public void Create_RejectsCategoryLongerThanMaximum()
+    {
+        var tooLong = new string('a', Equipment.CategoryMaxLength + 1);
+
+        Assert.Throws<ArgumentException>("category", () => Equipment.Create("Excavator", "SN-001", tooLong, Now));
+    }
+
+    [Fact]
+    public void Create_AcceptsTextsOfExactlyTheMaximumLength()
+    {
+        var name = new string('a', Equipment.NameMaxLength);
+        var serialNumber = new string('b', Equipment.SerialNumberMaxLength);
+        var category = new string('c', Equipment.CategoryMaxLength);
+
+        var equipment = Equipment.Create(name, serialNumber, category, Now);
+
+        Assert.Equal(name, equipment.Name);
+        Assert.Equal(serialNumber, equipment.SerialNumber);
+        Assert.Equal(category, equipment.Category);
+    }
 }
